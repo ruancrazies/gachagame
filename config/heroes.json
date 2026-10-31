@@ -120,7 +120,8 @@
       "skills": [
         "tank_basic",
         "tank_ultimate",
-        "passive_sample_ur"
+        "passive_sample_ur",
+        "passive_counter_sample"
       ]
     },
     {
@@ -150,7 +151,8 @@
       },
       "skills": [
         "assassin_basic",
-        "assassin_ultimate"
+        "assassin_ultimate",
+        "passive_pursuit_sample"
       ]
     },
     {
@@ -240,7 +242,8 @@
       },
       "skills": [
         "warrior_basic",
-        "warrior_ultimate"
+        "warrior_ultimate",
+        "passive_follow_up_sample"
       ]
     },
     {
@@ -271,7 +274,8 @@
       "skills": [
         "support_basic",
         "support_ultimate",
-        "passive_sample_ur"
+        "passive_sample_ur",
+        "passive_revive_sample"
       ]
     },
     {
@@ -331,7 +335,8 @@
       },
       "skills": [
         "assassin_basic",
-        "assassin_ultimate"
+        "assassin_ultimate",
+        "passive_extra_turn_sample"
       ]
     },
     {

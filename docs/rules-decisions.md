@@ -42,3 +42,19 @@ Công thức `T(L) = a + b·Σ kᵢ·nᵢ(L)` dùng nᵢ(L) là "số cấp củ
 - **Kỹ năng mở khóa theo `skills[].unlockStar`**, không lặp lại trong bảng tiến hóa, để chỉ có một nơi ghi mốc mở khóa.
 - **Luật chọn mục tiêu** có thêm `lowest_hp` (cho kỹ năng hồi máu, sát thủ) và `all` (diện rộng) so với danh sách 6 luật trong tài liệu; hiệu ứng có thêm loại `dot` (thiêu đốt).
 - **Mỗi file cấu hình có `status`** (`placeholder` / `draft` / `final`). Khi chốt xong từng phần, đổi sang `final`; `npm run validate:config -- --strict` sẽ không cho phát hành khi còn phần chưa final.
+
+## E. Giai đoạn 1: các luật engine đã dùng đề xuất mặc định
+
+Engine đã chạy với các đề xuất mặc định ở mục A (#1, #4 đến #8). Chúng **vẫn chờ bạn xác nhận**, nhưng không còn chặn việc làm tiếp.
+Toàn bộ luật engine đang áp dụng (kể cả chỗ engine phải tự quyết) ghi ở [engine-rules.md](engine-rules.md); các dòng đánh dấu **[MỚI]** trong đó cần bạn xem.
+
+| # | Câu hỏi | Engine đang làm | Nằm ở |
+| --- | --- | --- | --- |
+| [ ] 17 | Hết 20 hiệp thì ai thắng | Bên phòng thủ (B) thắng; có thể đổi sang "gây sát thương nhiều hơn thắng" | `rules.battle.timeoutRule` |
+| [ ] 18 | Cột nào bị nhắm khi dùng luật `column` | Cột có nhiều kẻ địch còn sống nhất, hòa thì cột trái | `targeting.ts` |
+| [ ] 19 | Hiệu ứng cùng loại có cộng dồn không | Không, cùng id thì làm mới số lượt; buff/debuff khác id cộng gộp | `simulate.ts` |
+| [ ] 20 | Khiên và thiêu đốt: khiên có chặn thiêu đốt không | Có, khiên hấp thụ cả sát thương thiêu đốt | `simulate.ts` |
+| [ ] 21 | Phản kích, liên kích, truy kích, hành động ngay: dùng đòn nào, có nối chuỗi không | Dùng đánh thường của chủ; đòn phản ứng không kích hoạt thêm đòn phản ứng; giới hạn 1 lần/hiệp | `engine-rules.md` mục "Hành động đặc biệt" |
+| [ ] 22 | Hồi sinh | Một lần mỗi trận, theo `reviveHpRatio` | `skills[].special` |
+
+Phát hiện khi chạy mô phỏng với số liệu `placeholder` (1000 trận, đội 5 người, cấp 100 đến 600): khoảng **25 đến 28% trận chạm mốc 20 hiệp** mà chưa ai thắng, nên luật hết hiệp quyết định gần như toàn bộ lệch thắng thua giữa bên tấn công và phòng thủ (A thắng ~38%, B ~62%). Đây là hệ quả của tỉ lệ máu so với sát thương trong số liệu mẫu, không phải lỗi engine, nhưng nên cân nhắc khi chốt #17 và khi cân chỉnh chỉ số ở Giai đoạn 4. Chạy lại bằng `npm run simulate`.

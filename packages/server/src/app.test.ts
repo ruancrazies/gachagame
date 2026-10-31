@@ -7,7 +7,7 @@ describe('server', () => {
     const app = buildApp();
     const res = await app.inject({ method: 'GET', url: '/health' });
     expect(res.statusCode).toBe(200);
-    expect(res.json()).toEqual({ status: 'ok', configVersion: '0.1.0', configWarnings: 6 });
+    expect(res.json()).toEqual({ status: 'ok', configVersion: '0.2.0', configWarnings: 6 });
     await app.close();
   });
 

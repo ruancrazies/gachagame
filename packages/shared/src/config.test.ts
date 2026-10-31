@@ -34,7 +34,7 @@ describe('bộ cấu hình mẫu', () => {
   const { config, warnings } = loadGameConfig();
 
   it('qua được kiểm tra schema và tham chiếu chéo', () => {
-    expect(config.manifest.configVersion).toBe('0.1.0');
+    expect(config.manifest.configVersion).toBe('0.2.0');
   });
 
   it('cảnh báo các phần chưa chốt thay vì im lặng', () => {
@@ -119,6 +119,11 @@ describe('cấu hình sai phải bị bắt', () => {
     ['buff thiếu stat', (r) => void delete r.effects.effects.find((e) => e['id'] === 'atk_up_30')!['stat'], 'cần stat'],
     ['heal có duration khác 0', (r) => void (r.effects.effects.find((e) => e['id'] === 'heal_atk_80')!['duration'] = 2), 'duration phải bằng 0'],
     ['bị động thiếu trigger', (r) => void delete r.skills.skills.find((s) => s['id'] === 'passive_sample_ur')!['trigger'], 'phải có trigger'],
+    ['special trên kỹ năng không phải bị động', (r) => void (r.skills.skills[0]!['special'] = { kind: 'counter', chance: 1 }), 'special chỉ dùng cho kỹ năng bị động'],
+    ['phản kích sai trigger', (r) => void (r.skills.skills.find((s) => s['id'] === 'passive_counter_sample')!['trigger'] = 'turn_start'), 'phải có trigger after_damage'],
+    ['hồi sinh thiếu reviveHpRatio', (r) => void delete (r.skills.skills.find((s) => s['id'] === 'passive_revive_sample')!['special'] as Record<string, unknown>)['reviveHpRatio'], 'cần reviveHpRatio'],
+    ['reviveHpRatio trên phản kích', (r) => void ((r.skills.skills.find((s) => s['id'] === 'passive_counter_sample')!['special'] as Record<string, unknown>)['reviveHpRatio'] = 0.5), 'chỉ dùng cho revive'],
+    ['thiếu timeoutRule', (r) => void delete (r.rules as unknown as { battle: Record<string, unknown> }).battle['timeoutRule'], 'timeoutRule'],
     ['gõ sai tên trường', (r) => void (r.heroes.heroes[0]!['atkk'] = 1), 'atkk'],
     ['thiếu một bậc tiến hóa', (r) => void r.evolution.steps.splice(6, 1), 'thiếu ★7'],
     ['cấp tối đa giảm giữa hai bậc', (r) => void (r.evolution.steps[9]!['maxLevel'] = 10), 'thấp hơn ★9'],

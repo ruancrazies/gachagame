@@ -70,6 +70,12 @@ export const rulesSchema = z
       maxRounds: posInt,
       maxTeamSize: posInt,
       grid: z.strictObject({ rows: posInt, cols: posInt }),
+      /**
+       * Hết maxRounds mà chưa phân thắng bại thì ai thắng (đội A là bên tấn công, B là bên phòng thủ):
+       * - defender_wins: bên phòng thủ (B) thắng, vì bên tấn công không hạ hết;
+       * - higher_damage: bên gây nhiều sát thương hơn thắng, hòa thì bên phòng thủ thắng.
+       */
+      timeoutRule: z.enum(['defender_wins', 'higher_damage']),
     }),
     damage: z.strictObject({
       /** k trong phụ lục A. */
@@ -98,6 +104,8 @@ export const rulesSchema = z
     energy: z.strictObject({
       /** Đầy năng lượng thì tung tuyệt kỹ. */
       max: posInt,
+      /** Năng lượng lúc bắt đầu trận. */
+      initial: nonNegInt,
     }),
     levelCurve: z.strictObject({
       stages: z.array(levelStageSchema).min(1),
@@ -213,6 +221,24 @@ const groupTargeting = z.strictObject({
 const selfTargeting = z.strictObject({ side: z.literal('self') });
 export const targetingSchema = z.discriminatedUnion('side', [groupTargeting, selfTargeting]);
 
+/**
+ * Hành động đặc biệt của kỹ năng bị động (Giai đoạn 1). Đòn đánh dùng kỹ năng thường của chủ sở hữu.
+ * - counter (phản kích): chủ sở hữu bị kẻ địch đánh trúng và còn sống thì đánh trả kẻ đó;
+ * - follow_up (liên kích): sau khi chủ sở hữu gây sát thương, đánh thêm một đòn vào mục tiêu vừa trúng;
+ * - pursuit (truy kích): sau khi một đồng đội gây sát thương, chủ sở hữu đánh thêm vào một mục tiêu vừa trúng còn sống;
+ * - extra_turn (hành động ngay): sau khi chủ sở hữu gây sát thương, được hành động thêm một lượt đầy đủ ngay lập tức;
+ * - revive (hồi sinh): khi chủ sở hữu chết, hồi sinh với reviveHpRatio máu tối đa (tối đa một lần mỗi trận).
+ */
+export const SPECIAL_KINDS = ['counter', 'follow_up', 'pursuit', 'extra_turn', 'revive'] as const;
+export const specialSchema = z.strictObject({
+  kind: z.enum(SPECIAL_KINDS),
+  chance: fraction,
+  /** Số lần tối đa mỗi hiệp (mặc định 1; revive luôn tối đa 1 lần mỗi trận). */
+  maxPerRound: posInt.optional(),
+  /** Chỉ dùng cho revive: tỉ lệ máu tối đa khi sống lại. */
+  reviveHpRatio: z.number().gt(0).max(1).optional(),
+});
+
 export const skillSchema = z
   .strictObject({
     id,
@@ -229,13 +255,28 @@ export const skillSchema = z
     unlockStar: star,
     /** Chỉ dành cho kỹ năng bị động. */
     trigger: z.enum(HOOKS).optional(),
+    /** Chỉ dành cho kỹ năng bị động: hành động đặc biệt (phản kích, liên kích...). */
+    special: specialSchema.optional(),
   })
   .superRefine((s, ctx) => {
     const issue = (path: string, message: string) => ctx.addIssue({ code: 'custom', path: [path], message });
     if (s.kind === 'passive' && !s.trigger) issue('trigger', 'kỹ năng bị động phải có trigger');
     if (s.kind !== 'passive' && s.trigger) issue('trigger', 'trigger chỉ dùng cho kỹ năng bị động');
     if (s.kind !== 'basic' && s.energyGain !== 0) issue('energyGain', 'energyGain chỉ dành cho kỹ năng thường');
-    if (s.damageCoef === 0 && s.effects.length === 0) {
+    if (s.special) {
+      if (s.kind !== 'passive') issue('special', 'special chỉ dùng cho kỹ năng bị động');
+      const expected = s.special.kind === 'revive' ? 'on_death' : 'after_damage';
+      if (s.trigger && s.trigger !== expected) {
+        issue('trigger', `${s.special.kind} phải có trigger ${expected}`);
+      }
+      if (s.special.kind === 'revive' && !s.special.reviveHpRatio) {
+        issue('special', 'revive cần reviveHpRatio');
+      }
+      if (s.special.kind !== 'revive' && s.special.reviveHpRatio !== undefined) {
+        issue('special', 'reviveHpRatio chỉ dùng cho revive');
+      }
+    }
+    if (s.damageCoef === 0 && s.effects.length === 0 && !s.special) {
       issue('damageCoef', 'kỹ năng phải có damageCoef lớn hơn 0 hoặc ít nhất một hiệu ứng');
     }
   });
@@ -325,6 +366,7 @@ export type Rules = z.infer<typeof rulesSchema>;
 export type Effect = z.infer<typeof effectSchema>;
 export type EffectsFile = z.infer<typeof effectsFileSchema>;
 export type Skill = z.infer<typeof skillSchema>;
+export type SpecialKind = (typeof SPECIAL_KINDS)[number];
 export type SkillsFile = z.infer<typeof skillsFileSchema>;
 export type Hero = z.infer<typeof heroSchema>;
 export type HeroesFile = z.infer<typeof heroesFileSchema>;

@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "Game gacha thần thoại: đấu tự động theo lượt, server giữ toàn bộ logic.",
+  "description": "Game gacha th\u1ea7n tho\u1ea1i: \u0111\u1ea5u t\u1ef1 \u0111\u1ed9ng theo l\u01b0\u1ee3t, server gi\u1eef to\u00e0n b\u1ed9 logic.",
   "workspaces": [
     "packages/*"
   ],
@@ -19,7 +19,8 @@
     "build:web": "npm run build -w @gacha/web",
     "dev:server": "npm run dev -w @gacha/server",
     "dev:web": "npm run dev -w @gacha/web",
-    "check": "npm run lint && npm run typecheck && npm run test && npm run validate:config && npm run build:web"
+    "check": "npm run lint && npm run typecheck && npm run test && npm run validate:config && npm run build:web",
+    "simulate": "tsx scripts/simulate-batch.ts"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

@@ -3,7 +3,11 @@
   "battle": {
     "maxRounds": 20,
     "maxTeamSize": 5,
-    "grid": { "rows": 3, "cols": 3 }
+    "grid": {
+      "rows": 3,
+      "cols": 3
+    },
+    "timeoutRule": "defender_wins"
   },
   "damage": {
     "defenseConstant": 1.0,
@@ -26,15 +30,36 @@
     }
   },
   "energy": {
-    "max": 100
+    "max": 100,
+    "initial": 0
   },
   "levelCurve": {
     "stages": [
-      { "fromLevel": 1, "toLevel": 150, "multiplier": 1 },
-      { "fromLevel": 151, "toLevel": 350, "multiplier": 1.2 },
-      { "fromLevel": 351, "toLevel": 700, "multiplier": 1.5 },
-      { "fromLevel": 701, "toLevel": 880, "multiplier": 2 },
-      { "fromLevel": 881, "toLevel": 1000, "multiplier": 3 }
+      {
+        "fromLevel": 1,
+        "toLevel": 150,
+        "multiplier": 1
+      },
+      {
+        "fromLevel": 151,
+        "toLevel": 350,
+        "multiplier": 1.2
+      },
+      {
+        "fromLevel": 351,
+        "toLevel": 700,
+        "multiplier": 1.5
+      },
+      {
+        "fromLevel": 701,
+        "toLevel": 880,
+        "multiplier": 2
+      },
+      {
+        "fromLevel": 881,
+        "toLevel": 1000,
+        "multiplier": 3
+      }
     ]
   },
   "heroSkillSlots": {
