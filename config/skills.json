@@ -1,0 +1,61 @@
+{
+  "status": "placeholder",
+  "skills": [
+    {
+      "id": "warrior_basic", "name": "Chém thường", "kind": "basic",
+      "targeting": { "side": "enemy", "rule": "front_row", "count": 1 },
+      "damageCoef": 1.0, "effects": [], "energyGain": 30, "unlockStar": 1
+    },
+    {
+      "id": "warrior_ultimate", "name": "Trảm sơn", "kind": "ultimate",
+      "targeting": { "side": "enemy", "rule": "column", "count": 3 },
+      "damageCoef": 1.8, "effects": ["stun_1"], "energyGain": 0, "unlockStar": 1
+    },
+    {
+      "id": "mage_basic", "name": "Phép cơ bản", "kind": "basic",
+      "targeting": { "side": "enemy", "rule": "random", "count": 1 },
+      "damageCoef": 1.0, "effects": [], "energyGain": 30, "unlockStar": 1
+    },
+    {
+      "id": "mage_ultimate", "name": "Bão phép", "kind": "ultimate",
+      "targeting": { "side": "enemy", "rule": "all", "count": 5 },
+      "damageCoef": 1.4, "effects": ["def_down_30"], "energyGain": 0, "unlockStar": 1
+    },
+    {
+      "id": "assassin_basic", "name": "Đâm lén", "kind": "basic",
+      "targeting": { "side": "enemy", "rule": "lowest_hp", "count": 1 },
+      "damageCoef": 1.1, "effects": [], "energyGain": 30, "unlockStar": 1
+    },
+    {
+      "id": "assassin_ultimate", "name": "Tử huyệt", "kind": "ultimate",
+      "targeting": { "side": "enemy", "rule": "highest_atk", "count": 1 },
+      "damageCoef": 3.0, "effects": ["silence_2"], "energyGain": 0, "unlockStar": 1
+    },
+    {
+      "id": "tank_basic", "name": "Đập khiên", "kind": "basic",
+      "targeting": { "side": "enemy", "rule": "front_row", "count": 1 },
+      "damageCoef": 0.8, "effects": [], "energyGain": 30, "unlockStar": 1
+    },
+    {
+      "id": "tank_ultimate", "name": "Chiến hô", "kind": "ultimate",
+      "targeting": { "side": "ally", "rule": "all", "count": 5 },
+      "damageCoef": 0, "effects": ["shield_atk_120", "def_up_30"], "energyGain": 0, "unlockStar": 1
+    },
+    {
+      "id": "support_basic", "name": "Tia sáng", "kind": "basic",
+      "targeting": { "side": "enemy", "rule": "random", "count": 1 },
+      "damageCoef": 0.8, "effects": [], "energyGain": 30, "unlockStar": 1
+    },
+    {
+      "id": "support_ultimate", "name": "Ban phước", "kind": "ultimate",
+      "targeting": { "side": "ally", "rule": "all", "count": 5 },
+      "damageCoef": 0, "effects": ["heal_atk_80", "atk_up_30"], "energyGain": 0, "unlockStar": 1
+    },
+    {
+      "id": "passive_sample_ur", "name": "Ý chí thần thoại (mẫu)", "kind": "passive",
+      "targeting": { "side": "self" },
+      "damageCoef": 0, "effects": ["atk_up_30"], "energyGain": 0, "unlockStar": 15,
+      "trigger": "turn_start"
+    }
+  ]
+}

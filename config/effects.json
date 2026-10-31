@@ -1,0 +1,15 @@
+{
+  "status": "placeholder",
+  "effects": [
+    { "id": "stun_1", "name": "Choáng 1 lượt", "kind": "stun", "duration": 1, "chance": 0.35 },
+    { "id": "silence_2", "name": "Câm lặng 2 lượt", "kind": "silence", "duration": 2, "chance": 0.5 },
+    { "id": "shield_atk_120", "name": "Khiên 120% ATK", "kind": "shield", "duration": 2, "value": 1.2, "scaling": "casterAtk", "chance": 1 },
+    { "id": "heal_atk_80", "name": "Hồi máu 80% ATK", "kind": "heal", "duration": 0, "value": 0.8, "scaling": "casterAtk", "chance": 1 },
+    { "id": "burn_atk_50", "name": "Thiêu đốt 50% ATK mỗi lượt", "kind": "dot", "duration": 2, "value": 0.5, "scaling": "casterAtk", "chance": 0.6 },
+    { "id": "atk_up_30", "name": "Tăng 30% ATK", "kind": "buff", "duration": 2, "value": 0.3, "stat": "atk", "chance": 1 },
+    { "id": "def_up_30", "name": "Tăng 30% DEF", "kind": "buff", "duration": 2, "value": 0.3, "stat": "def", "chance": 1 },
+    { "id": "spd_up_20", "name": "Tăng 20% SPD", "kind": "buff", "duration": 2, "value": 0.2, "stat": "spd", "chance": 1 },
+    { "id": "atk_down_30", "name": "Giảm 30% ATK", "kind": "debuff", "duration": 2, "value": 0.3, "stat": "atk", "chance": 0.5 },
+    { "id": "def_down_30", "name": "Giảm 30% DEF", "kind": "debuff", "duration": 2, "value": 0.3, "stat": "def", "chance": 0.5 }
+  ]
+}

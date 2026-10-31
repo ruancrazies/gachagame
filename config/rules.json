@@ -1,0 +1,49 @@
+{
+  "status": "draft",
+  "battle": {
+    "maxRounds": 20,
+    "maxTeamSize": 5,
+    "grid": { "rows": 3, "cols": 3 }
+  },
+  "damage": {
+    "defenseConstant": 1.0,
+    "baseCritRate": 0.05,
+    "baseCritDamage": 0.5,
+    "minDamage": 1,
+    "elementAdvantage": 1.1,
+    "elementDisadvantage": 0.9,
+    "lightDarkMultiplier": 1.15,
+    "elementBeats": {
+      "fire": "wind",
+      "wind": "lightning",
+      "lightning": "water",
+      "water": "fire"
+    },
+    "caps": {
+      "critRate": null,
+      "evasion": null,
+      "effectAccuracy": null
+    }
+  },
+  "energy": {
+    "max": 100
+  },
+  "levelCurve": {
+    "stages": [
+      { "fromLevel": 1, "toLevel": 150, "multiplier": 1 },
+      { "fromLevel": 151, "toLevel": 350, "multiplier": 1.2 },
+      { "fromLevel": 351, "toLevel": 700, "multiplier": 1.5 },
+      { "fromLevel": 701, "toLevel": 880, "multiplier": 2 },
+      { "fromLevel": 881, "toLevel": 1000, "multiplier": 3 }
+    ]
+  },
+  "heroSkillSlots": {
+    "A": 4,
+    "S": 4,
+    "SS": 4,
+    "UR": 5
+  },
+  "economy": {
+    "refundRate": 0.8
+  }
+}

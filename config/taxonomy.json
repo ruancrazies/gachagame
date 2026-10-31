@@ -1,0 +1,17 @@
+{
+  "status": "placeholder",
+  "roles": [
+    { "id": "warrior", "name": "Chiến binh" },
+    { "id": "mage", "name": "Pháp sư" },
+    { "id": "assassin", "name": "Sát thủ" },
+    { "id": "tank", "name": "Hộ vệ" },
+    { "id": "support", "name": "Hỗ trợ" }
+  ],
+  "weaponTypes": [
+    { "id": "sword", "name": "Kiếm" },
+    { "id": "spear", "name": "Thương" },
+    { "id": "bow", "name": "Cung" },
+    { "id": "staff", "name": "Trượng" },
+    { "id": "dagger", "name": "Chủy thủ" }
+  ]
+}

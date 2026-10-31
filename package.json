@@ -1,0 +1,33 @@
+{
+  "name": "gacha-game",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Game gacha thần thoại: đấu tự động theo lượt, server giữ toàn bộ logic.",
+  "workspaces": [
+    "packages/*"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "typecheck": "npm run typecheck --workspaces --if-present && tsc --noEmit -p tsconfig.json",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "validate:config": "tsx scripts/validate-config.ts",
+    "build:web": "npm run build -w @gacha/web",
+    "dev:server": "npm run dev -w @gacha/server",
+    "dev:web": "npm run dev -w @gacha/web",
+    "check": "npm run lint && npm run typecheck && npm run test && npm run validate:config && npm run build:web"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^26.6.6",
+    "eslint": "^10.14.0",
+    "tsx": "^4.23.15",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.72.1",
+    "vitest": "^5.0.5"
+  }
+}

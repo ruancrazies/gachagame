@@ -1,0 +1,368 @@
+{
+  "status": "placeholder",
+  "heroes": [
+    {
+      "id": "xich_diem",
+      "name": "Xích Diễm",
+      "element": "fire",
+      "role": "warrior",
+      "rarity": "A",
+      "weaponType": "sword",
+      "stats": {
+        "atk": {
+          "a": 120,
+          "b": 5.5
+        },
+        "def": {
+          "a": 60,
+          "b": 3.3
+        },
+        "hp": {
+          "a": 1000,
+          "b": 55
+        },
+        "spd": {
+          "a": 100,
+          "b": 0.02
+        }
+      },
+      "skills": [
+        "warrior_basic",
+        "warrior_ultimate"
+      ]
+    },
+    {
+      "id": "hoa_vu",
+      "name": "Hỏa Vũ",
+      "element": "fire",
+      "role": "mage",
+      "rarity": "UR",
+      "weaponType": "staff",
+      "stats": {
+        "atk": {
+          "a": 210,
+          "b": 9.63
+        },
+        "def": {
+          "a": 59,
+          "b": 3.23
+        },
+        "hp": {
+          "a": 1120,
+          "b": 61.6
+        },
+        "spd": {
+          "a": 98,
+          "b": 0.02
+        }
+      },
+      "skills": [
+        "mage_basic",
+        "mage_ultimate",
+        "passive_sample_ur"
+      ]
+    },
+    {
+      "id": "thuy_linh",
+      "name": "Thủy Linh",
+      "element": "water",
+      "role": "support",
+      "rarity": "S",
+      "weaponType": "staff",
+      "stats": {
+        "atk": {
+          "a": 101,
+          "b": 4.62
+        },
+        "def": {
+          "a": 64,
+          "b": 3.51
+        },
+        "hp": {
+          "a": 1288,
+          "b": 70.84
+        },
+        "spd": {
+          "a": 106,
+          "b": 0.02
+        }
+      },
+      "skills": [
+        "support_basic",
+        "support_ultimate"
+      ]
+    },
+    {
+      "id": "hai_thuan",
+      "name": "Hải Thuẫn",
+      "element": "water",
+      "role": "tank",
+      "rarity": "UR",
+      "weaponType": "spear",
+      "stats": {
+        "atk": {
+          "a": 118,
+          "b": 5.39
+        },
+        "def": {
+          "a": 118,
+          "b": 6.47
+        },
+        "hp": {
+          "a": 2100,
+          "b": 115.5
+        },
+        "spd": {
+          "a": 93,
+          "b": 0.02
+        }
+      },
+      "skills": [
+        "tank_basic",
+        "tank_ultimate",
+        "passive_sample_ur"
+      ]
+    },
+    {
+      "id": "phong_anh",
+      "name": "Phong Ảnh",
+      "element": "wind",
+      "role": "assassin",
+      "rarity": "SS",
+      "weaponType": "dagger",
+      "stats": {
+        "atk": {
+          "a": 180,
+          "b": 8.25
+        },
+        "def": {
+          "a": 56,
+          "b": 3.09
+        },
+        "hp": {
+          "a": 1000,
+          "b": 55
+        },
+        "spd": {
+          "a": 114,
+          "b": 0.02
+        }
+      },
+      "skills": [
+        "assassin_basic",
+        "assassin_ultimate"
+      ]
+    },
+    {
+      "id": "thanh_phong",
+      "name": "Thanh Phong",
+      "element": "wind",
+      "role": "support",
+      "rarity": "A",
+      "weaponType": "bow",
+      "stats": {
+        "atk": {
+          "a": 90,
+          "b": 4.13
+        },
+        "def": {
+          "a": 57,
+          "b": 3.14
+        },
+        "hp": {
+          "a": 1150,
+          "b": 63.25
+        },
+        "spd": {
+          "a": 105,
+          "b": 0.02
+        }
+      },
+      "skills": [
+        "support_basic",
+        "support_ultimate"
+      ]
+    },
+    {
+      "id": "loi_dinh",
+      "name": "Lôi Đình",
+      "element": "lightning",
+      "role": "mage",
+      "rarity": "S",
+      "weaponType": "staff",
+      "stats": {
+        "atk": {
+          "a": 168,
+          "b": 7.7
+        },
+        "def": {
+          "a": 47,
+          "b": 2.59
+        },
+        "hp": {
+          "a": 896,
+          "b": 49.28
+        },
+        "spd": {
+          "a": 96,
+          "b": 0.02
+        }
+      },
+      "skills": [
+        "mage_basic",
+        "mage_ultimate"
+      ]
+    },
+    {
+      "id": "loi_ho",
+      "name": "Lôi Hổ",
+      "element": "lightning",
+      "role": "warrior",
+      "rarity": "SS",
+      "weaponType": "spear",
+      "stats": {
+        "atk": {
+          "a": 150,
+          "b": 6.88
+        },
+        "def": {
+          "a": 75,
+          "b": 4.13
+        },
+        "hp": {
+          "a": 1250,
+          "b": 68.75
+        },
+        "spd": {
+          "a": 102,
+          "b": 0.02
+        }
+      },
+      "skills": [
+        "warrior_basic",
+        "warrior_ultimate"
+      ]
+    },
+    {
+      "id": "quang_minh",
+      "name": "Quang Minh",
+      "element": "light",
+      "role": "support",
+      "rarity": "UR",
+      "weaponType": "staff",
+      "stats": {
+        "atk": {
+          "a": 126,
+          "b": 5.77
+        },
+        "def": {
+          "a": 80,
+          "b": 4.39
+        },
+        "hp": {
+          "a": 1610,
+          "b": 88.55
+        },
+        "spd": {
+          "a": 108,
+          "b": 0.02
+        }
+      },
+      "skills": [
+        "support_basic",
+        "support_ultimate",
+        "passive_sample_ur"
+      ]
+    },
+    {
+      "id": "thanh_kiem",
+      "name": "Thánh Kiếm",
+      "element": "light",
+      "role": "warrior",
+      "rarity": "A",
+      "weaponType": "sword",
+      "stats": {
+        "atk": {
+          "a": 120,
+          "b": 5.5
+        },
+        "def": {
+          "a": 60,
+          "b": 3.3
+        },
+        "hp": {
+          "a": 1000,
+          "b": 55
+        },
+        "spd": {
+          "a": 100,
+          "b": 0.02
+        }
+      },
+      "skills": [
+        "warrior_basic",
+        "warrior_ultimate"
+      ]
+    },
+    {
+      "id": "am_nguyet",
+      "name": "Ám Nguyệt",
+      "element": "dark",
+      "role": "assassin",
+      "rarity": "SS",
+      "weaponType": "dagger",
+      "stats": {
+        "atk": {
+          "a": 180,
+          "b": 8.25
+        },
+        "def": {
+          "a": 56,
+          "b": 3.09
+        },
+        "hp": {
+          "a": 1000,
+          "b": 55
+        },
+        "spd": {
+          "a": 114,
+          "b": 0.02
+        }
+      },
+      "skills": [
+        "assassin_basic",
+        "assassin_ultimate"
+      ]
+    },
+    {
+      "id": "u_minh",
+      "name": "U Minh",
+      "element": "dark",
+      "role": "tank",
+      "rarity": "S",
+      "weaponType": "spear",
+      "stats": {
+        "atk": {
+          "a": 94,
+          "b": 4.31
+        },
+        "def": {
+          "a": 94,
+          "b": 5.17
+        },
+        "hp": {
+          "a": 1680,
+          "b": 92.4
+        },
+        "spd": {
+          "a": 91,
+          "b": 0.02
+        }
+      },
+      "skills": [
+        "tank_basic",
+        "tank_ultimate"
+      ]
+    }
+  ]
+}

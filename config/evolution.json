@@ -1,0 +1,320 @@
+{
+  "status": "placeholder",
+  "steps": [
+    {
+      "star": 1,
+      "maxLevel": 50,
+      "cost": {
+        "copies": 0,
+        "fodder": [],
+        "awakeningStone": 0,
+        "bloodCrystal": 0,
+        "timeStone": 0
+      }
+    },
+    {
+      "star": 2,
+      "maxLevel": 100,
+      "cost": {
+        "copies": 1,
+        "fodder": [
+          {
+            "star": 1,
+            "count": 1
+          }
+        ],
+        "awakeningStone": 10,
+        "bloodCrystal": 0,
+        "timeStone": 0
+      }
+    },
+    {
+      "star": 3,
+      "maxLevel": 150,
+      "cost": {
+        "copies": 1,
+        "fodder": [
+          {
+            "star": 2,
+            "count": 1
+          }
+        ],
+        "awakeningStone": 15,
+        "bloodCrystal": 0,
+        "timeStone": 0
+      }
+    },
+    {
+      "star": 4,
+      "maxLevel": 200,
+      "cost": {
+        "copies": 1,
+        "fodder": [
+          {
+            "star": 2,
+            "count": 1
+          }
+        ],
+        "awakeningStone": 20,
+        "bloodCrystal": 0,
+        "timeStone": 0
+      }
+    },
+    {
+      "star": 5,
+      "maxLevel": 250,
+      "cost": {
+        "copies": 2,
+        "fodder": [
+          {
+            "star": 3,
+            "count": 1
+          }
+        ],
+        "awakeningStone": 25,
+        "bloodCrystal": 0,
+        "timeStone": 0
+      }
+    },
+    {
+      "star": 6,
+      "maxLevel": 300,
+      "cost": {
+        "copies": 2,
+        "fodder": [
+          {
+            "star": 3,
+            "count": 1
+          }
+        ],
+        "awakeningStone": 30,
+        "bloodCrystal": 3,
+        "timeStone": 0
+      }
+    },
+    {
+      "star": 7,
+      "maxLevel": 350,
+      "cost": {
+        "copies": 2,
+        "fodder": [
+          {
+            "star": 4,
+            "count": 1
+          }
+        ],
+        "awakeningStone": 35,
+        "bloodCrystal": 6,
+        "timeStone": 0
+      }
+    },
+    {
+      "star": 8,
+      "maxLevel": 400,
+      "cost": {
+        "copies": 2,
+        "fodder": [
+          {
+            "star": 4,
+            "count": 1
+          }
+        ],
+        "awakeningStone": 40,
+        "bloodCrystal": 9,
+        "timeStone": 0
+      }
+    },
+    {
+      "star": 9,
+      "maxLevel": 450,
+      "cost": {
+        "copies": 3,
+        "fodder": [
+          {
+            "star": 5,
+            "count": 1
+          }
+        ],
+        "awakeningStone": 45,
+        "bloodCrystal": 12,
+        "timeStone": 0
+      }
+    },
+    {
+      "star": 10,
+      "maxLevel": 500,
+      "cost": {
+        "copies": 3,
+        "fodder": [
+          {
+            "star": 5,
+            "count": 2
+          }
+        ],
+        "awakeningStone": 50,
+        "bloodCrystal": 15,
+        "timeStone": 0
+      }
+    },
+    {
+      "star": 11,
+      "maxLevel": 550,
+      "cost": {
+        "copies": 3,
+        "fodder": [
+          {
+            "star": 6,
+            "count": 2
+          }
+        ],
+        "awakeningStone": 55,
+        "bloodCrystal": 18,
+        "timeStone": 2
+      }
+    },
+    {
+      "star": 12,
+      "maxLevel": 600,
+      "cost": {
+        "copies": 3,
+        "fodder": [
+          {
+            "star": 6,
+            "count": 2
+          }
+        ],
+        "awakeningStone": 60,
+        "bloodCrystal": 21,
+        "timeStone": 4
+      }
+    },
+    {
+      "star": 13,
+      "maxLevel": 650,
+      "cost": {
+        "copies": 4,
+        "fodder": [
+          {
+            "star": 7,
+            "count": 2
+          }
+        ],
+        "awakeningStone": 65,
+        "bloodCrystal": 24,
+        "timeStone": 6
+      }
+    },
+    {
+      "star": 14,
+      "maxLevel": 700,
+      "cost": {
+        "copies": 4,
+        "fodder": [
+          {
+            "star": 7,
+            "count": 2
+          }
+        ],
+        "awakeningStone": 70,
+        "bloodCrystal": 27,
+        "timeStone": 8
+      }
+    },
+    {
+      "star": 15,
+      "maxLevel": 750,
+      "cost": {
+        "copies": 4,
+        "fodder": [
+          {
+            "star": 8,
+            "count": 2
+          }
+        ],
+        "awakeningStone": 75,
+        "bloodCrystal": 30,
+        "timeStone": 10
+      }
+    },
+    {
+      "star": 16,
+      "maxLevel": 800,
+      "cost": {
+        "copies": 4,
+        "fodder": [
+          {
+            "star": 8,
+            "count": 2
+          }
+        ],
+        "awakeningStone": 80,
+        "bloodCrystal": 33,
+        "timeStone": 12
+      }
+    },
+    {
+      "star": 17,
+      "maxLevel": 850,
+      "cost": {
+        "copies": 5,
+        "fodder": [
+          {
+            "star": 9,
+            "count": 2
+          }
+        ],
+        "awakeningStone": 85,
+        "bloodCrystal": 36,
+        "timeStone": 14
+      }
+    },
+    {
+      "star": 18,
+      "maxLevel": 900,
+      "cost": {
+        "copies": 5,
+        "fodder": [
+          {
+            "star": 9,
+            "count": 2
+          }
+        ],
+        "awakeningStone": 90,
+        "bloodCrystal": 39,
+        "timeStone": 16
+      }
+    },
+    {
+      "star": 19,
+      "maxLevel": 950,
+      "cost": {
+        "copies": 5,
+        "fodder": [
+          {
+            "star": 10,
+            "count": 2
+          }
+        ],
+        "awakeningStone": 95,
+        "bloodCrystal": 42,
+        "timeStone": 18
+      }
+    },
+    {
+      "star": 20,
+      "maxLevel": 1000,
+      "cost": {
+        "copies": 5,
+        "fodder": [
+          {
+            "star": 10,
+            "count": 3
+          }
+        ],
+        "awakeningStone": 100,
+        "bloodCrystal": 45,
+        "timeStone": 20
+      }
+    }
+  ]
+}
